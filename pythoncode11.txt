@@ -1,0 +1,21 @@
+﻿11. """Write a program which accepts a sequence of comma separated 4 digit 
+binary numbers as its input and then check whether they are divisible by 5 
+or not. The numbers that are divisible by 5 are to be printed in a comma 
+separated sequence.
+Example:
+0100,0011,1010,1001
+Then the output should be:
+1010"""
+
+
+
+
+binary_sequence = input("Enter a sequence of comma-separated 4-digit binary numbers: ")
+binary_list = binary_sequence.split(',')
+divisible_by_5 = []
+for binary_number in binary_list:
+    decimal_number = int(binary_number, 2)
+    if decimal_number % 5 == 0:
+        divisible_by_5.append(binary_number)
+output = ",".join(divisible_by_5)
+print(output)

@@ -1,0 +1,41 @@
+﻿52. """Find the largest kxk submatrix with all entries 1 in a mxn binary matrix"""
+
+
+def maxSubmatrix(matrix, m, n):
+    max_size = 0
+    max_i = 0
+    max_j = 0
+    dp = [[0 for j in range(n)] for i in range(m)]
+
+
+    for i in range(m):
+        dp[i][0] = matrix[i][0]
+    for j in range(n):
+        dp[0][j] = matrix[0][j]
+
+
+    
+    for i in range(1, m):
+        for j in range(1, n):
+            if matrix[i][j] == 1:
+                dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1
+                if dp[i][j] > max_size:
+                    max_size = dp[i][j]
+                    max_i = i
+                    max_j = j
+
+
+    submatrix = []
+    for i in range(max_i - max_size + 1, max_i + 1):
+        row = []
+        for j in range(max_j - max_size + 1, max_j + 1):
+            row.append(matrix[i][j])
+        submatrix.append(row)
+
+
+    return submatrix
+
+
+print("Largest submatrix with all entries 1:")
+for row in submatrix:
+    print(row)

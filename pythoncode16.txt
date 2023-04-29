@@ -1,0 +1,22 @@
+﻿16. """Write a program that computes the net amount of a bank account based a 
+transaction log from console input. The transaction log format is shown as 
+following:
+D 100
+W 200"""
+
+
+net_amount = 0
+
+
+while True:
+    transaction = input("Enter transaction (D/W amount) or 'done' to finish: ")
+    if transaction.lower() == "done":
+        break
+    transaction_type, amount = transaction.split()
+    if transaction_type == "D":
+        net_amount += int(amount)
+    elif transaction_type == "W":
+        net_amount -= int(amount)
+
+
+print("Net amount:", net_amount)

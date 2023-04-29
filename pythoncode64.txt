@@ -1,0 +1,5 @@
+﻿64. #Print a unicode string "hello world"
+
+
+unicode_str = u'\u0068\u0065\u006c\u006c\u006f\u0020\u0077\u006f\u0072\u006c\u0064'
+print(unicode_str)

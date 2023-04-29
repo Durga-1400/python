@@ -1,0 +1,22 @@
+﻿51. #Longest Palindromic Subsequence
+
+
+def longest_palindromic_subsequence(s):
+    n = len(s)
+    # create a table to store the lengths of longest palindromic subsequence
+    table = [[0] * n for _ in range(n)]
+    # initialize the table for strings of length 1
+    for i in range(n):
+        table[i][i] = 1
+    # fill the table for strings of length 2 to n
+    for length in range(2, n + 1):
+        for i in range(n - length + 1):
+            j = i + length - 1
+            if s[i] == s[j] and length == 2:
+                table[i][j] = 2
+            elif s[i] == s[j]:
+                table[i][j] = table[i + 1][j - 1] + 2
+            else:
+                table[i][j] = max(table[i][j - 1], table[i + 1][j])
+    # return the length of longest palindromic subsequence
+    return table[0][n - 1]

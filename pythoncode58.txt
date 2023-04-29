@@ -1,0 +1,11 @@
+﻿58. """Write a function to compute 5/0 and use try/except to catch the 
+exceptions."""
+
+
+def compute():
+    try:
+        result = 5/0
+    except ZeroDivisionError:
+        print("Error: Division by zero!")
+    else:
+        print("Result:", result)

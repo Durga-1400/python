@@ -1,0 +1,14 @@
+﻿48. """Write a program which can map() to make a list whose elements are square 
+of numbers between 1 and 20 (both included)."""
+
+
+ square of a number
+square = lambda x: x**2
+
+
+numbers = list(range(1, 21))
+
+
+ each element in numbers
+squares = list(map(square, numbers))
+print(squares)

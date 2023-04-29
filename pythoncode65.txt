@@ -1,0 +1,7 @@
+﻿65. """Write a program to read an ASCII string and to convert it to a unicode string 
+encoded by utf-8."""
+
+
+ascii_string = "Hello, world!"  # ASCII string
+utf8_string = ascii_string.encode('utf-8')  # Convert to utf-8 encoded Unicode string
+print(utf8_string)
